@@ -248,7 +248,8 @@
   .table_item_data tbody tr:first-child:hover {
     background-color: transparent;
   }
-  navbar {
+  /* Used to be navbar */
+  nav { 
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -313,7 +314,8 @@
     cursor: not-allowed; /* Change cursor to indicate that the button is not clickable */
   }
   @media (max-width: 700px) {
-    navbar {
+    /* Used to be navbar */
+    nav {
         display: flex;
         flex-direction: column;
         justify-content: center;

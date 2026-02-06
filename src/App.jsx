@@ -29,6 +29,7 @@ function App() {
         </div>
       </header>
 
+      {/* CSS is used to manage conditional rendering / pop-up animation of page sections*/}
       <div className={`event-list-container ${showVenue ? 'visible' : ''}`}>
         <ConferenceEvent />
       </div>

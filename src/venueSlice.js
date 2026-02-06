@@ -3,7 +3,8 @@ import { createSlice } from "@reduxjs/toolkit";
 
 export const venueSlice = createSlice({
   name: "venue",
-  initialState: [
+  initialState: [ // Initial State can be its own data structure and does not have to be a Dictionary
+    // In this case state is an array of objects
     {
       img: "https://pixabay.com/images/download/chairs-2181916_640.jpg",
       name: "Conference Room (Capacity:15)",
@@ -34,15 +35,16 @@ export const venueSlice = createSlice({
       cost: 1100,
       quantity: 0,
     },
-  
   ],
+
   reducers: {
    
     incrementQuantity: (state, action) => {
       const { payload: index } = action;
-      if (state[index]) {
+      if (state[index]) { //if item at the index exists??
+        // You always should check becaues you don't know how this reducer may be used
         if (state[index].name === " Auditorium Hall (Capacity:200)" && state[index].quantity >= 3) {
-          return;        }
+          return;        } // If the item is the Auditorium Hall and its quantity is already 3 or more, do not increment further
         state[index].quantity++;
       }
     },
